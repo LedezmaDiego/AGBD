@@ -33,7 +33,7 @@ INNER JOIN country co ON ci.country_id = co.country_id
 
 -- EJERCICIO 4)
 
-SELECT f.title, MIN(rental_date), MAX(rental_date)
+SELECT f.title, MIN(return_date), MAX(return_date)
 FROM film f
 INNER JOIN inventory i ON f.film_id = i.film_id
 INNER JOIN rental r ON r.inventory_id = i.inventory_id
