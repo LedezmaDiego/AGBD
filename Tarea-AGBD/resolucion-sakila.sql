@@ -107,7 +107,7 @@ GROUP BY a.address, ci.city, co.country
 
 -- EJERCICIO 11)
 
-SELECT AVG(p.amount), c.name
+SELECT AVG(f.rental_rate), c.name
 FROM film f
 INNER JOIN film_category fc ON fc.film_id = f.film_id
 INNER JOIN category c ON fc.category_id = c.category_id
@@ -115,12 +115,13 @@ INNER JOIN inventory i ON f.film_id = i.film_id
 INNER JOIN rental r ON r.inventory_id = i.inventory_id
 INNER JOIN payment p ON p.rental_id = r.rental_id
 GROUP BY c.name
+ORDER BY AVG(f.rental_rate) DESC
 
 -- EJERCICIO 12)
 
-SELECT f.title, p.amount
+SELECT f.title, (f.rental_duration * f.rental_rate) AS 'Costo Total', f.rental_duration, f.rental_rate, r.rental_date, r.return_date
 FROM film f
 INNER JOIN inventory i ON f.film_id = i.film_id
 INNER JOIN rental r ON r.inventory_id = i.inventory_id
-INNER JOIN payment p ON p.rental_id = r.rental_id
 WHERE title = 'ALABAMA DEVIL'
+ORDER BY r.rental_date ASC
