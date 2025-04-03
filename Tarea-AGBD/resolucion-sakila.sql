@@ -40,6 +40,8 @@ INNER JOIN rental r ON r.inventory_id = i.inventory_id
 GROUP BY f.title
 
 -- EJERCICIO 5)
+-- Como tal, esta es la solución, pero al hacerlo en el SQL Lite Browser,
+-- se congela/laguea/tilda/aparece en marcha pero tarda por ser varios datos
 
 SELECT * 
 FROM film f
@@ -59,6 +61,66 @@ INNER JOIN city ci ON a.city_id = ci.city_id
 INNER JOIN country co ON ci.country_id = co.country_id
 INNER JOIN customer cus ON cus.customer_id = r.customer_id
 
+-- EJERCICIO 6)
 
+SELECT COUNT(title) AS "Cantidad de Peliculas por Tipo de Rating", rating 
+FROM film
+GROUP BY rating
 
+-- EJERCICIO 7)
 
+SELECT COUNT(title) AS "Cantidad de Peliculas por Categoria", c.name
+FROM film f
+INNER JOIN film_category fc ON fc.film_id = f.film_id
+INNER JOIN category c ON fc.category_id = c.category_id
+GROUP BY c.name
+
+-- EJERCICIO 8)
+
+SELECT COUNT(*) AS 'Actor Que Aparece Mas Veces', CONCAT(a.first_name, ' ', a.last_name) AS 'Nombre Completo'
+FROM film f
+INNER JOIN film_actor fa ON fa.film_id = f.film_id
+INNER JOIN actor a ON a.actor_id = fa.actor_id
+GROUP BY a.first_name
+ORDER BY COUNT(*) DESC
+LIMIT 10;
+
+-- EJERCICIO 9)
+
+SELECT COUNT(i.inventory_id), a.address, ci.city, co.country
+FROM inventory i
+INNER JOIN store s ON s.store_id = i.store_id
+INNER JOIN address a ON s.address_id = a.address_id
+INNER JOIN city ci ON a.city_id = ci.city_id
+INNER JOIN country co ON ci.country_id = co.country_id
+GROUP BY a.address, ci.city, co.country
+
+-- EJERCICIO 10)
+
+SELECT a.address, ci.city, co.country, COUNT(DISTINCT i.film_id) AS 'Peliculas Distintas'
+FROM inventory i
+INNER JOIN store s ON i.store_id = s.store_id
+INNER JOIN address a ON s.address_id = a.address_id
+INNER JOIN city ci ON a.city_id = ci.city_id
+INNER JOIN country co ON ci.country_id = co.country_id
+GROUP BY a.address, ci.city, co.country
+
+-- EJERCICIO 11)
+
+SELECT AVG(p.amount), c.name
+FROM film f
+INNER JOIN film_category fc ON fc.film_id = f.film_id
+INNER JOIN category c ON fc.category_id = c.category_id
+INNER JOIN inventory i ON f.film_id = i.film_id
+INNER JOIN rental r ON r.inventory_id = i.inventory_id
+INNER JOIN payment p ON p.rental_id = r.rental_id
+GROUP BY c.name
+
+-- EJERCICIO 12)
+
+SELECT f.title, p.amount
+FROM film f
+INNER JOIN inventory i ON f.film_id = i.film_id
+INNER JOIN rental r ON r.inventory_id = i.inventory_id
+INNER JOIN payment p ON p.rental_id = r.rental_id
+WHERE title = 'ALABAMA DEVIL'
