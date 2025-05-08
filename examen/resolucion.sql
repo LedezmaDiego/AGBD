@@ -1,17 +1,17 @@
 -- 1 Hay 30 canciones.
-SELECT COUNT(*) AS cantidad_canciones
+SELECT COUNT(*) AS 'Cantidad de Canciones'
 FROM tracks
 JOIN albums ON tracks.AlbumId = albums.AlbumId
 WHERE albums.Title = 'Unplugged';
 
 -- 2
-SELECT artists.Name AS artista, COUNT(tracks.TrackId) AS cantidad_canciones
+SELECT artists.Name AS 'Artista', COUNT(tracks.TrackId) AS 'Cantidad de Canciones'
 FROM artists
 JOIN albums ON artists.ArtistId = albums.ArtistId
 JOIN tracks ON albums.AlbumId = tracks.AlbumId
 GROUP BY artists.ArtistId
 HAVING COUNT(tracks.TrackId) >= 30
-ORDER BY cantidad_canciones DESC;
+ORDER BY COUNT(tracks.TrackId) DESC;
 
 -- 3
 INSERT INTO tracks (TrackId, Name, AlbumId, MediaTypeId, GenreId, Composer, Milliseconds, Bytes, UnitPrice)
