@@ -1,122 +1,61 @@
--- A la hora de ejecutar:
--- Cuando insertemos los datos en las tablas, si importa el orden
--- Aunque mandemos todos los INSERTS INTO al mismo tiempo
--- seguirá importando el orden
+INSERT INTO especiales (nombre_especial)
+VALUES ("Zafiro"), ("Flan");
 
-INSERT INTO gustos_especiales (gustos_exoticos_name)
-VALUES ("Wasabi"),
-("Queso azul"),
-("Aceite de oliva"),
-("Té verde matcha"),
-("Cactus"),
-("Pimienta rosa"),
-("Albahaca"),
-("Tomate cherry"),
-("Curry"),
-("Jengibre con miel"),
-("Lavanda"),
-("Rosa"),
-("Sésamo negro"),
-("Charcoal (carbón activado)"),
-("Calabaza especiada"),
-("Humo"),
-("Cerveza artesanal"),
-("Champán con frutilla"),
-("Vino Malbec"),
-("Ajo caramelizado"),
-("Palta (aguacate)"),
-("Anís estrellado"),
-("Pepino con menta"),
-("Pan de jengibre"),
-("Tocino con maple"),
-("Miso dulce"),
-("Chili picante"),
-("Café turco"),
-("Blue cheese con peras"),
-("Wasabi con chocolate blanco");
-
-INSERT INTO salsas (salsa_name)
+INSERT INTO salsas (nombre_salsa)
 VALUES ("Salsa de frutilla"),
 ("Salsa de chocolate"),
 ("Salsa de dulce de leche"),
 ("Salsa de caramelo"),
-("Salsa de frutos rojos"),
-("Salsa de maracuyá"),
-("Salsa de mango"),
-("Salsa de kiwi"),
-("Salsa de arándanos"),
-("Salsa de limón"),
-("Salsa de naranja"),
-("Salsa de frambuesa"),
-("Salsa de durazno"),
-("Salsa de manzana verde"),
-("Salsa de cereza"),
-("Salsa de coco"),
-("Salsa de frutos tropicales"),
-("Salsa de lavanda"),
-("Salsa de menta"),
-("Salsa de café"),
-("Salsa de vino tinto"),
-("Salsa de ron con pasas"),
-("Salsa de jengibre y miel"),
-("Salsa de té verde"),
-("Salsa de avellanas"),
-("Salsa de pistacho"),
-("Salsa de almendras"),
-("Salsa de rosas"),
-("Salsa de violetas"),
-("Salsa de especias chai");
+("Salsa de frutos rojos");
 
-INSERT INTO bocadillos (bocadillos_name)
+INSERT INTO bocadillos (nombre_bocadillo)
 VALUES ("Obleas"),
 ("Chocolate KitKat"),
 ("Rocklets"),
 ("Chispas de chocolate"),
-("Frutos secos"),
 ("Galletitas Oreo"),
 ("Brownie"),
 ("Galletitas de vainilla"),
 ("Cubitos de chocolate blanco"),
 ("Gomitas"),
-("Nueces caramelizadas"),
-("Crocante de maní"),
-("Granas de colores"),
 ("Cereales"),
 ("Pedacitos de alfajor"),
 ("Cookies trozadas"),
-("Marshmallows"),
 ("Trozos de banana"),
 ("Trozos de frutilla"),
-("Coco rallado"),
-("Caramelo duro"),
 ("Barra de cereal"),
-("Churros en miniatura"),
 ("Turrón picado"),
 ("Bombones"),
 ("Confites de chocolate"),
-("Mermelada espesa"),
 ("Bizcochuelo de chocolate"),
 ("Pedacitos de waffle"),
 ("Trozos de tarta de limón");
 
--- Inserta registros en la tabla 'store' con los nombres de las direcciones de las tiendas.
-INSERT INTO store (address_name)
-VALUES 
-  ('Av. Leticia'); -- Dirección ficticia
-
--- Inserta registros en la tabla 'inventory' con el ID de la tienda.
-INSERT INTO inventory (store_id)
+INSERT INTO sabores (nombre_sabor)
 VALUES
-  (1); -- Solamente un ID, porque tenemos una tienda
+('Vainilla'),
+('Chocolate'),
+('Frutilla'),
+('Dulce de leche'),
+('Frambuesa'),
+('Limón'),
+('Banana Split'),
+('Granizado'),
+('Tiramisú'),
+('Durazno');
 
--- Inserta dos registros en la tabla 'staff' con los nombres y las tiendas correspondientes.
-INSERT INTO staff (first_name, last_name, store_id)
+INSERT INTO tienda (direccion)
+VALUES ('Av. Leticia');
+
+INSERT INTO stock (tienda_id)
+VALUES (1);
+
+INSERT INTO empleados (nombre_empleado, apellido_empleado, tienda_id)
 VALUES 
-  ('Diego', 'Ajata Ledezma', 1), -- Agrega a Diego Ajata Ledezma asignado a la tienda con ID 1.
-  ('Juanma', 'Parrado', 1);      -- Agrega a Juanma Parrado asignado a la tienda con ID 1. Porque solo hay una tienda
+  ('Diego', 'Ajata Ledezma', 1),
+  ('Juanma', 'Parrado', 1);
 
--- Insertar un inventario para cada tienda
-INSERT INTO payment (pago, store_id, staff_id)
+INSERT INTO pagos (monto, tienda_id, empleado_id)
 VALUES
   (3300, 1, 1),
   (6500, 1, 2),
@@ -127,40 +66,86 @@ VALUES
   (4500, 1, 2),
   (1200, 1, 1);
 
-INSERT INTO gustos (
-  gustos_exoticos_id,
-  salsa_id,
-  gustos_name,
-  bocadillos_id,
-  inventory_id
-) VALUES
-(1, 1, 'Vainilla', 1, 1),
-(2, 2, 'Chocolate', 2, 1),
-(3, 3, 'Frutilla', 3, 1),
-(4, 4, 'Crema del cielo', 4, 1),
-(5, 5, 'Dulce de leche', 5, 1),
-(6, 6, 'Frambuesa', 6, 1),
-(7, 7, 'Limón', 7, 1),
-(8, 8, 'Naranja', 8, 1),
-(9, 9, 'Crema americana', 9, 1),
-(10, 10, 'Banana', 10, 1),
-(11, 11, 'Menta granizada', 11, 1),
-(12, 12, 'Granizado', 12, 1),
-(13, 13, 'Cereza', 13, 1),
-(14, 14, 'Coco', 14, 1),
-(15, 15, 'Mousse de chocolate', 15, 1),
-(16, 16, 'Tiramisú', 16, 1),
-(17, 17, 'Café', 17, 1),
-(18, 18, 'Avellana', 18, 1),
-(19, 19, 'Arándano', 19, 1),
-(20, 20, 'Mousse de limón', 20, 1),
-(21, 21, 'Zanahoria y naranja', 21, 1),
-(22, 22, 'Durazno', 22, 1),
-(23, 23, 'Manzana verde', 23, 1),
-(24, 24, 'Leche merengada', 24, 1),
-(25, 25, 'Mantecol', 25, 1),
-(26, 26, 'Chantilly', 26, 1),
-(27, 27, 'Yogur con frutas', 27, 1),
-(28, 28, 'Maracuyá', 28, 1),
-(29, 29, 'Uva', 29, 1),
-(30, 30, 'Mora', 30, 1);
+
+/*
+prompt para el copilot que me ayudó:
+ en la tabla salsas hay 5 salsas, sus id obvaimente van de 1 a 5
+ en la tabla bocadillos hay 21 bocadillos, sus id.... 
+ en la tabla sabores hay 10 
+ en la tabla especiales hay 2
+ ahora, en la tabla inter_especial_salsa, tendras que hacer algo asi
+ INSERT INTO inter_especial_salsa(especial_id, salsa_id)
+ VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(2,1),(2,2),(2,3),(2,4),(2,5);
+*/
+
+-- Relacionar cada especial con todos los sabores (especial_id: 1 y 2, sabor_id: 1 a 10)
+INSERT INTO inter_sabor_especial(sabor_id, especial_id)
+VALUES (1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),
+(1,2),(2,2),(3,2),(4,2),(5,2),(6,2),(7,2),(8,2),(9,2),(10,2);
+
+-- Relacionar cada sabor con todas las salsas (sabor_id: 1 a 10, salsa_id: 1 a 5)
+INSERT INTO inter_sabor_salsa (sabor_id, salsa_id) VALUES
+(1,1),(1,2),(1,3),(1,4),(1,5),
+(2,1),(2,2),(2,3),(2,4),(2,5),
+(3,1),(3,2),(3,3),(3,4),(3,5),
+(4,1),(4,2),(4,3),(4,4),(4,5),
+(5,1),(5,2),(5,3),(5,4),(5,5),
+(6,1),(6,2),(6,3),(6,4),(6,5),
+(7,1),(7,2),(7,3),(7,4),(7,5),
+(8,1),(8,2),(8,3),(8,4),(8,5),
+(9,1),(9,2),(9,3),(9,4),(9,5),
+(10,1),(10,2),(10,3),(10,4),(10,5);
+-- Tanto el codigo que tengo encima, como el de abajo,
+-- funcionan para insertar los valores de tal forma
+-- funcionan para lo mismo
+INSERT INTO inter_sabor_salsa (sabor_id, salsa_id)
+SELECT s.sabor_id, sa.salsa_id
+FROM sabores s
+CROSS JOIN salsas sa;
+
+-- Relacionar cada sabor con todos los bocadillos (sabor_id: 1 a 10, bocadillo_id: 1 a 21)
+INSERT INTO inter_sabor_bocadillo (sabor_id, bocadillo_id) VALUES
+(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),
+(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),
+(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),(2,10),
+(2,11),(2,12),(2,13),(2,14),(2,15),(2,16),(2,17),(2,18),(2,19),(2,20),(2,21),
+(3,1),(3,2),(3,3),(3,4),(3,5),(3,6),(3,7),(3,8),(3,9),(3,10),
+(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),(3,20),(3,21),
+(4,1),(4,2),(4,3),(4,4),(4,5),(4,6),(4,7),(4,8),(4,9),(4,10),
+(4,11),(4,12),(4,13),(4,14),(4,15),(4,16),(4,17),(4,18),(4,19),(4,20),(4,21),
+(5,1),(5,2),(5,3),(5,4),(5,5),(5,6),(5,7),(5,8),(5,9),(5,10),
+(5,11),(5,12),(5,13),(5,14),(5,15),(5,16),(5,17),(5,18),(5,19),(5,20),(5,21),
+(6,1),(6,2),(6,3),(6,4),(6,5),(6,6),(6,7),(6,8),(6,9),(6,10),
+(6,11),(6,12),(6,13),(6,14),(6,15),(6,16),(6,17),(6,18),(6,19),(6,20),(6,21),
+(7,1),(7,2),(7,3),(7,4),(7,5),(7,6),(7,7),(7,8),(7,9),(7,10),
+(7,11),(7,12),(7,13),(7,14),(7,15),(7,16),(7,17),(7,18),(7,19),(7,20),(7,21),
+(8,1),(8,2),(8,3),(8,4),(8,5),(8,6),(8,7),(8,8),(8,9),(8,10),
+(8,11),(8,12),(8,13),(8,14),(8,15),(8,16),(8,17),(8,18),(8,19),(8,20),(8,21),
+(9,1),(9,2),(9,3),(9,4),(9,5),(9,6),(9,7),(9,8),(9,9),(9,10),
+(9,11),(9,12),(9,13),(9,14),(9,15),(9,16),(9,17),(9,18),(9,19),(9,20),(9,21),
+(10,1),(10,2),(10,3),(10,4),(10,5),(10,6),(10,7),(10,8),(10,9),(10,10),
+(10,11),(10,12),(10,13),(10,14),(10,15),(10,16),(10,17),(10,18),(10,19),(10,20),(10,21);
+
+-- Relacionar cada especial con todas las salsas (especial_id: 1 y 2, salsa_id: 1 a 5)
+INSERT INTO inter_especial_salsa (especial_id, salsa_id) VALUES
+(1,1),(1,2),(1,3),(1,4),(1,5),
+(2,1),(2,2),(2,3),(2,4),(2,5);
+
+-- Relacionar cada especial con todos los bocadillos (especial_id: 1 y 2, bocadillo_id: 1 a 21)
+INSERT INTO inter_especial_bocadillo (especial_id, bocadillo_id) VALUES
+(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),
+(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),
+(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),(2,10),
+(2,11),(2,12),(2,13),(2,14),(2,15),(2,16),(2,17),(2,18),(2,19),(2,20),(2,21);
+
+/*
+Este query muestra el nombre del especial y el nombre de
+la salsa para el especial con ID 2 y la salsa con ID 5,
+utilizando las tablas de relación para obtener solo
+la combinación específica entre ambos.
+
+SELECT e.nombre_especial AS "Sabor Especial", s.nombre_salsa AS "Salsa" FROM especiales e
+INNER JOIN inter_especial_salsa i_e_s ON i_e_s.especial_id = e.especial_id
+INNER JOIN salsas s ON s.salsa_id = i_e_s.salsa_id
+WHERE s.salsa_id = 5 AND e.especial_id = 2
+*/
