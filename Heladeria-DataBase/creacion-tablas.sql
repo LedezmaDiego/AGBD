@@ -1,11 +1,15 @@
 CREATE TABLE sabores (
    sabor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-   nombre_sabor TEXT NOT NULL
+   nombre_sabor TEXT NOT NULL,
+   tienda_id INTEGER,
+   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
 );
 
 CREATE TABLE especiales (
    especial_id INTEGER PRIMARY KEY AUTOINCREMENT,
-   nombre_especial TEXT NOT NULL
+   nombre_especial TEXT NOT NULL,
+   tienda_id INTEGER,
+   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
 );
 
 CREATE TABLE salsas (
@@ -21,12 +25,6 @@ CREATE TABLE bocadillos (
 CREATE TABLE tienda (
    tienda_id INTEGER PRIMARY KEY AUTOINCREMENT,
    direccion TEXT NOT NULL
-);
-
-CREATE TABLE stock (
-   stock_id INTEGER PRIMARY KEY AUTOINCREMENT,
-   tienda_id INTEGER,
-   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
 );
 
 CREATE TABLE empleados (
