@@ -1,60 +1,59 @@
+INSERT INTO tiendas (direccion)
+VALUES ('Av. Leticia');
+
 INSERT INTO especiales (nombre_especial, tienda_id)
 VALUES ("Tramontana", 1), ("Flan", 1);
 
 INSERT INTO salsas (nombre_salsa)
 VALUES ("Salsa de frutilla"),
-("Salsa de chocolate"),
-("Salsa de dulce de leche"),
-("Salsa de caramelo"),
-("Salsa de frutos rojos");
+("Salsa de Chocolate"),
+("Salsa de Dulce de Leche"),
+("Salsa de Caramelo"),
+("Salsa de Frutos Rojos");
 
 INSERT INTO bocadillos (nombre_bocadillo)
 VALUES ("Obleas"),
 ("Chocolate KitKat"),
 ("Rocklets"),
-("Chispas de chocolate"),
+("Chispas de Chocolate"),
 ("Galletitas Oreo"),
 ("Brownie"),
-("Galletitas de vainilla"),
-("Cubitos de chocolate blanco"),
+("Galletitas de Vainilla"),
+("Cubitos de Chocolate Blanco"),
 ("Gomitas"),
 ("Cereales"),
-("Pedacitos de alfajor"),
-("Cookies trozadas"),
-("Trozos de banana"),
-("Trozos de frutilla"),
-("Barra de cereal"),
-("Turrón picado"),
+("Pedacitos de Alfajor"),
+("Trozos de Banana"),
+("Trozos de Frutilla"),
+("Barra de Cereal"),
+("Turrón Picado"),
 ("Bombones"),
-("Confites de chocolate"),
-("Bizcochuelo de chocolate"),
-("Pedacitos de waffle"),
-("Trozos de tarta de limón");
+("Confites de Chocolate"),
+("Bizcochuelo de Chocolate"),
+("Pedacitos de Waffle"),
+("Trozos de Tarta de Limón");
 
 INSERT INTO sabores (nombre_sabor, tienda_id)
 VALUES
 ('Vainilla', 1),
 ('Chocolate', 1),
 ('Frutilla', 1),
-('Dulce de leche', 1),
+('Dulce de Leche', 1),
 ('Frambuesa', 1),
 ('Limón', 1),
-('Banana split', 1),
+('Banana Split', 1),
 ('Granizado', 1),
 ('Tiramisú', 1),
 ('Durazno', 1);
 
 INSERT INTO cucuruchos (nombre_cucurucho)
 VALUES
-('Cucurucho simple'),
-('Cucurucho doble'),
+('Cucurucho Simple'),
+('Cucurucho Doble'),
 ('Capelina'),
-('Pote de 1/4kg'),
-('Pote de 1/2kg'),
-('Pote de 1kg');
-
-INSERT INTO tienda (direccion)
-VALUES ('Av. Leticia');
+('Pote de 1/4Kg'),
+('Pote de 1/2Kg'),
+('Pote de 1Kg');
 
 INSERT INTO empleados (nombre_empleado, apellido_empleado, tienda_id)
 VALUES 
@@ -75,7 +74,7 @@ VALUES
 INSERT INTO inter_sabor_especial (sabor_id, especial_id)
 SELECT s.sabor_id, e.especial_id
 FROM sabores s
-CROSS JOIN especiales e
+CROSS JOIN especiales e;
 
 INSERT INTO inter_sabor_salsa (sabor_id, salsa_id)
 SELECT s.sabor_id, sa.salsa_id
@@ -90,22 +89,22 @@ CROSS JOIN bocadillos b;
 INSERT INTO inter_especial_salsa (especial_id, salsa_id)
 SELECT e.especial_id, sa.salsa_id
 FROM especiales e
-CROSS JOIN salsas sa
+CROSS JOIN salsas sa;
 
 INSERT INTO inter_especial_bocadillo (especial_id, bocadillo_id)
 SELECT e.especial_id, b.bocadillo_id
 FROM especiales e
-CROSS JOIN bocadillos b
+CROSS JOIN bocadillos b;
 
 INSERT INTO inter_cucurucho_sabor (cucurucho_id, sabor_id)
 SELECT c.cucurucho_id, s.sabor_id
 FROM sabores s
-CROSS JOIN cucuruchos c
+CROSS JOIN cucuruchos c;
 
 INSERT INTO inter_cucurucho_especial (cucurucho_id, especial_id)
 SELECT c.cucurucho_id, e.especial_id
 FROM especiales e
-CROSS JOIN cucuruchos c
+CROSS JOIN cucuruchos c;
 
 /*
 Ejemplos de pedidos:

@@ -2,14 +2,14 @@ CREATE TABLE sabores (
    sabor_id INTEGER PRIMARY KEY AUTOINCREMENT,
    nombre_sabor TEXT NOT NULL,
    tienda_id INTEGER,
-   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
+   FOREIGN KEY(tienda_id) REFERENCES tiendas(tienda_id)
 );
 
 CREATE TABLE especiales (
    especial_id INTEGER PRIMARY KEY AUTOINCREMENT,
    nombre_especial TEXT NOT NULL,
    tienda_id INTEGER,
-   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
+   FOREIGN KEY(tienda_id) REFERENCES tiendas(tienda_id)
 );
 
 CREATE TABLE salsas (
@@ -22,7 +22,7 @@ CREATE TABLE bocadillos (
    nombre_bocadillo TEXT NOT NULL
 );
 
-CREATE TABLE tienda (
+CREATE TABLE tiendas (
    tienda_id INTEGER PRIMARY KEY AUTOINCREMENT,
    direccion TEXT NOT NULL
 );
@@ -32,7 +32,7 @@ CREATE TABLE empleados (
    nombre_empleado TEXT NOT NULL,
    apellido_empleado TEXT NOT NULL,
    tienda_id INTEGER,
-   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id)
+   FOREIGN KEY(tienda_id) REFERENCES tiendas(tienda_id)
 );
 
 CREATE TABLE pagos (
@@ -40,14 +40,14 @@ CREATE TABLE pagos (
    monto INTEGER,
    tienda_id INTEGER,
    empleado_id INTEGER,
-   FOREIGN KEY(tienda_id) REFERENCES tienda(tienda_id),
+   FOREIGN KEY(tienda_id) REFERENCES tiendas(tienda_id),
    FOREIGN KEY(empleado_id) REFERENCES empleados(empleado_id)
 );
 
 CREATE TABLE cucuruchos (
    cucurucho_id INTEGER PRIMARY KEY AUTOINCREMENT,
    nombre_cucurucho TEXT NOT NULL
-)
+);
 
 CREATE TABLE inter_sabor_especial (
    sabor_id INTEGER,
