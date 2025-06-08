@@ -44,6 +44,11 @@ CREATE TABLE pagos (
    FOREIGN KEY(empleado_id) REFERENCES empleados(empleado_id)
 );
 
+CREATE TABLE cucuruchos (
+   cucurucho_id INTEGER PRIMARY KEY AUTOINCREMENT,
+   nombre_cucurucho TEXT NOT NULL
+)
+
 CREATE TABLE inter_sabor_especial (
    sabor_id INTEGER,
    especial_id INTEGER,
@@ -82,4 +87,20 @@ CREATE TABLE inter_especial_bocadillo (
    PRIMARY KEY (especial_id, bocadillo_id),
    FOREIGN KEY (especial_id) REFERENCES especiales(especial_id) ON DELETE CASCADE,
    FOREIGN KEY (bocadillo_id) REFERENCES bocadillos(bocadillo_id) ON DELETE CASCADE
+);
+
+CREATE TABLE inter_cucurucho_sabor (
+   cucurucho_id INTEGER,
+   sabor_id INTEGER,
+   PRIMARY KEY (cucurucho_id, sabor_id),
+   FOREIGN KEY (cucurucho_id) REFERENCES cucuruchos(cucurucho_id) ON DELETE CASCADE,
+   FOREIGN KEY (sabor_id) REFERENCES sabores(sabor_id) ON DELETE CASCADE
+);
+
+CREATE TABLE inter_cucurucho_especial (
+   cucurucho_id INTEGER,
+   especial_id INTEGER,
+   PRIMARY KEY (cucurucho_id, especial_id),
+   FOREIGN KEY (cucurucho_id) REFERENCES cucuruchos(cucurucho_id) ON DELETE CASCADE,
+   FOREIGN KEY (especial_id) REFERENCES especiales(especial_id) ON DELETE CASCADE
 );

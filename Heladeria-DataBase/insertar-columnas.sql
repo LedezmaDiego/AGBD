@@ -1,5 +1,5 @@
 INSERT INTO especiales (nombre_especial, tienda_id)
-VALUES ("Zafiro", 1), ("Flan", 1);
+VALUES ("Tramontana", 1), ("Flan", 1);
 
 INSERT INTO salsas (nombre_salsa)
 VALUES ("Salsa de frutilla"),
@@ -39,10 +39,19 @@ VALUES
 ('Dulce de leche', 1),
 ('Frambuesa', 1),
 ('Limón', 1),
-('Banana Split', 1),
+('Banana split', 1),
 ('Granizado', 1),
 ('Tiramisú', 1),
 ('Durazno', 1);
+
+INSERT INTO cucuruchos (nombre_cucurucho)
+VALUES
+('Cucurucho simple'),
+('Cucurucho doble'),
+('Capelina'),
+('Pote de 1/4kg'),
+('Pote de 1/2kg'),
+('Pote de 1kg');
 
 INSERT INTO tienda (direccion)
 VALUES ('Av. Leticia');
@@ -88,17 +97,29 @@ SELECT e.especial_id, b.bocadillo_id
 FROM especiales e
 CROSS JOIN bocadillos b
 
+INSERT INTO inter_cucurucho_sabor (cucurucho_id, sabor_id)
+SELECT c.cucurucho_id, s.sabor_id
+FROM sabores s
+CROSS JOIN cucuruchos c
+
+INSERT INTO inter_cucurucho_especial (cucurucho_id, especial_id)
+SELECT c.cucurucho_id, e.especial_id
+FROM especiales e
+CROSS JOIN cucuruchos c
+
 /*
 Ejemplos de pedidos:
 
-SELECT s.nombre_sabor AS "Sabor", e.nombre_especial AS "Sabor Especial", sa.nombre_salsa AS "Salsa", b.nombre_bocadillo AS "Bocadillo" FROM sabores s
+SELECT s.nombre_sabor AS "Sabor", e.nombre_especial AS "Sabor Especial", sa.nombre_salsa AS "Salsa", b.nombre_bocadillo AS "Bocadillo", c.nombre_cucurucho AS "Tipo de Cucurucho" FROM sabores s
 INNER JOIN inter_sabor_especial i_s_e ON i_s_e.sabor_id = s.sabor_id
 INNER JOIN especiales e ON e.especial_id = i_s_e.especial_id
 INNER JOIN inter_especial_salsa i_e_sa ON i_e_sa.especial_id = e.especial_id
 INNER JOIN salsas sa ON sa.salsa_id = i_e_sa.salsa_id
 INNER JOIN inter_sabor_bocadillo i_s_b ON i_s_b.sabor_id = s.sabor_id
 INNER JOIN bocadillos b ON b.bocadillo_id = i_s_b.bocadillo_id
-WHERE s.sabor_id = 1 AND e.especial_id = 2 AND sa.salsa_id = 5 AND b.bocadillo_id = 3
+INNER JOIN inter_cucurucho_especial icu ON icu.especial_id = e.especial_id
+INNER JOIN cucuruchos c ON c.cucurucho_id = icu.cucurucho_id
+WHERE s.sabor_id = 1 AND e.especial_id = 2 AND sa.salsa_id = 5 AND b.bocadillo_id = 3 AND c.cucurucho_id = 2
 
 SELECT s.nombre_sabor, sa.nombre_salsa, b.nombre_bocadillo
 FROM sabores s
