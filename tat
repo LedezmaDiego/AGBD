@@ -1,0 +1,155 @@
+[33mcommit 818ee4c81fa8120ea5d71dde36046d5f5c550a68[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Sun Jun 8 20:39:18 2025 -0300
+
+    PDF cambiado, y nombre de datos en tablas cambiados
+
+[33mcommit 560a8a4d15215a9737ae1aab0a71b21f237a729a[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Sun Jun 8 20:24:12 2025 -0300
+
+    Se creó la tabla Cucuruchos y sus dos intermediarios
+
+[33mcommit 45439aed22c8e1268681b6e3287cef549f5283c9[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Jun 5 11:07:40 2025 -0300
+
+    DB Heladeria, consultas sql y arreglos en los INSERT INTO y CREATE hechos
+
+[33mcommit 6ff09883d1c87200e1182ed0e58edf9124983e99[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 29 12:12:55 2025 -0300
+
+    DB guardado
+
+[33mcommit 5f532fbab77a0205af900af9cec21805b08b3649[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 29 12:05:37 2025 -0300
+
+    Heladeria modificada para pedir con variedad, INSERT INTO con CROSS JOIN
+
+[33mcommit 48e4e9d2c6c47b74071efb0ad2ffbe8a3f905c87[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Fri May 23 21:53:32 2025 -0300
+
+    Nombre de carpetas actualizados
+
+[33mcommit fd7a8042f70c20649f58b2419085517f726b45de[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Fri May 23 21:46:53 2025 -0300
+
+    CREATE e INSERT INTO logrados
+
+[33mcommit 7e4925400445a9065bf2ea3a61f81a69b6d35a89[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 22 12:00:21 2025 -0300
+
+    Base de Datos de heladerìa los papus, añadimos inserts y creates para la db
+
+[33mcommit db6b7c2036bebe65d25fd0c0ce85c7c2fe337771[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 15 12:03:20 2025 -0300
+
+    Se cambio el nombre de la carpeta, y se borró esta carpeta
+
+[33mcommit 1c6d758e539cb55692f4f1bf8865466dee737d6e[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 15 12:01:33 2025 -0300
+
+    PDF del modelo de estructura de la base de datos agregada y archivo de insertación de datos a las tablas en proceso
+
+[33mcommit 2a659216708dfa2823d390d6eb3ec7df2afd4655[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 15 10:48:16 2025 -0300
+
+    Creacion de carpeta de trabajo de dos integrantes para una database de un negocio
+
+[33mcommit ba7f1bf9cfc788c9253a0265884b45c67a769fd2[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 15 10:47:53 2025 -0300
+
+    Cambio de nombre de carpeta
+
+[33mcommit 88227b4b97eedbd0d4d4902ba112955fde15442e[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 15 10:47:30 2025 -0300
+
+    Corrigiendo Actividad 8
+
+[33mcommit 028f77abeeb17d7e5d429c2fcc9e1c3ee3d25f16[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 8 11:08:35 2025 -0300
+
+    Modificación leve
+
+[33mcommit 7a4b998d667a7542ad0a97f54fa131afa0730c12[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 8 11:02:15 2025 -0300
+
+    Examen acabado
+
+[33mcommit 5e3fc585dcba72e722cfcf126f3374f22221b2f1[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 8 11:02:02 2025 -0300
+
+    Cambios leves
+
+[33mcommit 573fd5bd0f0ef1e81e169e4b39aa4d5bc4ca2eec[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu May 8 11:01:13 2025 -0300
+
+    Archivos renombrados
+
+[33mcommit 4ce305fa83b9d3501cbc208af4435b8ac33ca0b7[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Apr 24 11:23:43 2025 -0300
+
+    Actividades realizadas de Sekila y Chinook
+
+[33mcommit 5dc60f0412a6619729b6b6a2df0a9915bfd8ca2d[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Apr 24 11:19:50 2025 -0300
+
+    Actividades del día de SQL completadas
+
+[33mcommit 1c37e9c44815f30b3acfcc63bdda8c31ac27c5eb[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Apr 3 11:44:42 2025 -0300
+
+    Sekila, hasta la actividad 12
+
+[33mcommit 43637cfc9b56738c194332a7427f9374ba15ebe2[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Apr 3 10:01:50 2025 -0300
+
+    Continuando consignas de la base de datos Sekila
+
+[33mcommit 14f1a0e7ac284758dbcf08a86b0f99909dcdb6b0[m
+Author: Diego <142122760+LedezmaDiego@users.noreply.github.com>
+Date:   Thu Mar 27 13:15:40 2025 -0300
+
+    Arreglo demasiado pequeño
+
+[33mcommit 7469d319e4e4e65f0748a585da16af6f43de200e[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Mar 27 11:00:44 2025 -0300
+
+    Actividad de Base de Datos de Sakila
+
+[33mcommit a4f013e725784eac0f3618add82d7d3bbfcf3abe[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Mar 20 12:04:46 2025 -0300
+
+    Misterio de un asesinato resuelto con sentencias SQL
+
+[33mcommit b92f25785563671eb89914ba412c146695679a39[m
+Author: Diego Ajata Ledezma <ajataledezmadiego@gmail.com>
+Date:   Thu Mar 13 11:57:49 2025 -0300
+
+    SQL ISLAND
+
+[33mcommit c88677e16656e8f779ed83d94f97a7b34f6d8ae1[m
+Author: Diego <142122760+LedezmaDiego@users.noreply.github.com>
+Date:   Thu Mar 13 08:17:34 2025 -0300
+
+    Initial commit
