@@ -46,14 +46,14 @@ VALUES
 ('Tiramisú', 1),
 ('Durazno', 1);
 
-INSERT INTO cucuruchos (nombre_cucurucho)
+INSERT INTO cucuruchos (nombre_cucurucho, precio)
 VALUES
-('Cucurucho Simple'),
-('Cucurucho Doble'),
-('Capelina'),
-('Pote de 1/4Kg'),
-('Pote de 1/2Kg'),
-('Pote de 1Kg');
+('Cucurucho Simple', 1800),
+('Cucurucho Doble', 3000),
+('Capelina', 2800),
+('Pote de 1/4Kg', 3500),
+('Pote de 1/2Kg', 6600),
+('Pote de 1Kg', 12000);
 
 INSERT INTO empleados (nombre_empleado, apellido_empleado, tienda_id)
 VALUES 

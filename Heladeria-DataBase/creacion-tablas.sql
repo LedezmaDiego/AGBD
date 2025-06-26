@@ -46,7 +46,8 @@ CREATE TABLE pagos (
 
 CREATE TABLE cucuruchos (
    cucurucho_id INTEGER PRIMARY KEY AUTOINCREMENT,
-   nombre_cucurucho TEXT NOT NULL
+   nombre_cucurucho TEXT,
+   precio INTEGER
 );
 
 CREATE TABLE inter_sabor_especial (
